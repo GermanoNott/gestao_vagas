@@ -33,4 +33,4 @@ jobs:
             - name: remove container
               run: docker rm -f gestao-vagas
             - name: Run docker container gestao-vagas
-              run: docker run -d -p 8080:8080 -e DATABASE_URL=jdbc:postgres://gestao-vagas-db.c3we02qwymx9.us-east-2.rds.amazonaws.com:5432/gestao_vagas_db -e DATABASE_PASSWORD=dev12345 -e DATABASE_USERNAME=gestaovagas --name gestao-vagas germanott/gestao_vagas
+              run: docker run -d -p 8080:8080 -e DATABASE_URL=${{secrets.DATABASE_URL}} -e DATABASE_PASSWORD='${{secrets.DATABASE_PASSWORD}}' -e DATABASE_USERNAME=${{secrets.DATABASE_USERNAME}} --name gestao-vagas germanott/gestao_vagas
