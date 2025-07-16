@@ -1,0 +1,29 @@
+name: Gestao de Vagas Application
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Set up Java
+              uses: actions/setup-java@v3
+              with:
+                  distribution: 'temurin'
+                  java-version: '17'
+
+            # - name: Build with Maven
+            #   run: mvn clean install --no-transfer-progress
+
+            # - name: Run tests
+            #   run: mvn test --no-transfer-progress
+
+            # - name: Deploy to production
+            #   run: |
+            #       echo "Deploying to production..."
+            #       # Add your deployment script here
